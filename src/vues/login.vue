@@ -62,6 +62,7 @@ export default {
         //验证通过才允许发请求
         login(this.loginForm)
         .then(res=>{
+          localStorage.setItem("itcast_pro_token",res.data.data.token)
             // eslint-disable-next-line no-console
             if(res.data.meta.status===400){
                 this.$message({
